@@ -10,7 +10,7 @@ This is a simple number guessing program. The user will be prompted to enter a r
 - <b>PowerShell</b> 
 - <b>C++</b>
 - <b>Visual Studio Code</b>
--<b>Qt Designer</b>
+- <b>Qt Designer</b>
 
 <h2>Environments Used </h2>
 
