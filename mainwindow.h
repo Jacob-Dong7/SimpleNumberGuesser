@@ -21,5 +21,6 @@ class MainWindow : public QMainWindow {
     void on_btnConfirm_clicked();
     void on_btnGuess_clicked();
     void on_btnQuit_triggered();
+    void on_btnPlayAgain_clicked();
 };
 #endif

@@ -16,7 +16,10 @@ void MainWindow::on_btnConfirm_clicked() {
         QMessageBox::critical(this, "Error", "The End Range Must Be Larger Than Start Range");
         return;
     }
-
+    ui->txtGuess->setValue(0);
+    ui->txtAnswer->setText("Enter A Number To Guess, Good Luck!");
+    ui->btnPlayAgain->setVisible(false);
+    ui->btnGuess->setVisible(true);
     start = ui->sbStart->value();
     end = ui->sbEnd->value();
 
@@ -29,6 +32,8 @@ void MainWindow::on_btnConfirm_clicked() {
 void MainWindow::on_btnGuess_clicked() {
     if (ui->txtGuess->value() == randomNum) {
         ui->txtAnswer->setText("Good job");
+        ui->btnGuess->setVisible(false);
+        ui->btnPlayAgain->setVisible(true);
         return;
     }
     if (ui->txtGuess->value() < randomNum) {
@@ -41,4 +46,12 @@ void MainWindow::on_btnGuess_clicked() {
 
 void MainWindow::on_btnQuit_triggered() {
     QApplication::quit();
+}
+
+void MainWindow::on_btnPlayAgain_clicked() {
+    ui->sbStart->setValue(0);
+    ui->sbEnd->setValue(0);
+    ui->txtAnswer->clear();
+    ui->txtGuess->clear();
+    ui->stackedWidget->setCurrentIndex(0);
 }
